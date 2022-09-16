@@ -1,14 +1,19 @@
 
 <?php
-
+/**
+ * Clase Prueba
+ * @author Pedro Luis Sanchez Calle (psanchezc09@gmail.com - pedroluissanchezcalle7@gmail.com)
+ * @version v.1.0.0
+ */
 class Prueba
 {
     /**
-     * @acces private
+     * Guarda la url para iniciar la petición al web service.
+     * @access private 
      */
     private $getChallange;
     /**
-     * @acces private
+     * @access private
      */
     private $token;
     /**
@@ -20,8 +25,7 @@ class Prueba
     }
 
     /**
-     * @param $getChallange url para solicitar token
-     * 
+     * Asigna un valor a la variable $token
      */
     function setToken(): bool
     {
@@ -34,12 +38,13 @@ class Prueba
         }
     }
     /**
+     * Crea la AccesKey del usuario prueba
      * @return $AccessKey del usuario prueba
      */
     function getAccessKey(): string
     {
         try {
-            $this->token = $this->getToken($this->getChallange);
+            $this->token = $this->token;
             $claveAcceso = '3DlKwKDMqPsiiK0B';
             $AccessKey = md5($this->token . $claveAcceso);
             return $AccessKey;
@@ -49,7 +54,8 @@ class Prueba
     }
 
     /**
-     * @return string sessionName
+     * Obtiene la sessionName del usuario
+     * @return string $sessionName
      */
     function getSessionName()
     {
@@ -76,7 +82,8 @@ class Prueba
     }
 
     /**
-     * @return [] de datos de la petición 
+     * Obtiene los datos del web service
+     * @return [] de datos 
      */
 
     function getDatosPrueba()
