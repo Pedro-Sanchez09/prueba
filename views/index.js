@@ -16,6 +16,16 @@ $(document).ready(function () {
 
     query();
   });
+  /**
+   * Realixa petición para obtener total de contactos.
+   */
+  $("#getTotal").click(() => {
+    $.get("controllers/pruebaController.php?op=total", function (dataT) {
+      dataT = JSON.parse(dataT);
+      let total = dataT.data[0].count;
+      $("#totalC").text(`Total de contactos: ${total}`);
+    });
+  });
 
   /**
    * Realiza la petición query y llena la tabla con los datos recibidos
@@ -23,7 +33,7 @@ $(document).ready(function () {
   function query() {
     $.get("controllers/pruebaController.php?op=query", function (data) {
       data = JSON.parse(data);
-      console.log("Datos", data.data);
+
       tablaDatos = $("#tablaQuery").DataTable({
         destroy: true,
         data: data.data,

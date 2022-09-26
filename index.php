@@ -11,6 +11,7 @@
 </head>
 <body>
     <button type="button" class="btn btn-primary" id="getDatos">Listar datos</button>
+    <button type="button" class="btn btn-secondary" id="getTotal">Total</button>
     <div id="datos">
         <table id="tablaQuery" class="table table-striped table-bordered table-condensed">
             <thead class="text-center">
@@ -24,6 +25,10 @@
             <tbody>
             </tbody>
         </table>
+    </div>
+    <div id="total">
+        <H1 id="totalC"></H1>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

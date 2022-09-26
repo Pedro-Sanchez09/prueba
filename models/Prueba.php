@@ -98,5 +98,22 @@ class Prueba
             return $e;
         }
     }
+
+
+    /**
+     * Devuelve el número total de Contactos del web service.
+     */
+    function getTotal()
+    {
+        try {
+            $sessionName = $this->getSessionName();
+            $url = "https://develop.datacrm.la/anieto/anietopruebatecnica/webservice.php?operation=query&sessionName=$sessionName&query=select count(*) from Contacts;";
+            $url = str_replace(' ', '%20', $url);
+            $resultado = json_decode(file_get_contents($url), true);
+            return array("status" => 200, "data" => $resultado['result']);
+        } catch (Exception $e) {
+            return $e;
+        }
+    }
 }
 ?>

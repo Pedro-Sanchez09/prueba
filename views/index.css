@@ -13,7 +13,19 @@ body, html {
     margin-top: 50px;
     margin-left: 300px;
 }
+#getTotal{
+    background: black;
+    margin-left: 50px;
+    margin-top: 50px;
+}
 #datos{
+    background: rgb(223, 219, 219);
+    width: 70%;
+   
+    margin-left: 300px;
+    margin-top: 20px;
+}
+#total{
     background: rgb(223, 219, 219);
     width: 70%;
    
